@@ -1,9 +1,11 @@
 import { app, protocol, Menu, BrowserWindow, globalShortcut } from 'electron';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
-import { resolve } from 'path';
+import path from 'path';
+import os from 'os';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
+const iconExtension = os.platform === 'win32' ? 'ico' : 'png';
 
 import './backend/database';
 
@@ -17,7 +19,7 @@ function createWindow() {
   process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
   win = new BrowserWindow({
-    icon: resolve(__static, 'icons', 'icon.png'), // eslint-disable-line no-undef
+    icon: path.resolve(__static, 'icons', `icon.${iconExtension}`), // eslint-disable-line no-undef
     width: 1000,
     height: 700,
     minWidth: 800,
