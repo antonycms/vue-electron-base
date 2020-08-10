@@ -7,7 +7,7 @@ import os from 'os';
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const iconExtension = os.platform === 'win32' ? 'ico' : 'png';
 
-import './backend/database';
+import '@/backend';
 
 let win;
 

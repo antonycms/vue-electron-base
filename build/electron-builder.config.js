@@ -8,6 +8,7 @@ const builderOptions = {
   linux: {
     target: ['AppImage'],
     icon: './icon.png',
+    category: 'Development',
   },
 
   // WINDOWS BUILD CONFIG

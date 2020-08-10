@@ -1,5 +1,10 @@
 {
   "name": "vue-electron-app",
+  "author": {
+    "name": "Antony Santos",
+    "email": "antonyc828@gmail.com",
+    "url": "https://github.com/antonycms"
+  },
   "version": "0.1.0",
   "private": true,
   "description": "A basis for Vue development with Electron APP",
@@ -19,11 +24,15 @@
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.4",
     "vue": "^2.6.11",
-    "vuetify": "^2.2.11"
+    "vuetify": "^2.2.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.4.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
