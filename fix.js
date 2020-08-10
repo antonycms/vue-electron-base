@@ -7,7 +7,8 @@ fs.readFile(pgClientPath, 'utf8', function(err, data) {
   if (err) {
     return console.log(err);
   }
-  var result = data.replace("var Native = require('pg-native')", 'var Native = null');
+
+  const result = data.replace("var Native = require('pg-native')", 'var Native = null');
 
   fs.writeFile(pgClientPath, result, 'utf8', function(err) {
     if (err) return console.log(err);
