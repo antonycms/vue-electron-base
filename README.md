@@ -20,7 +20,7 @@
 
 <!-- <img  align="center" src="./docs/print-home.png"/> -->
 
-### 🏠 [Homepage](https://github.com/softwheredev/vue-electron-base)
+### 🏠 [Homepage](https://github.com/antonycms/vue-electron-base)
 
 ## Requisitos
 
