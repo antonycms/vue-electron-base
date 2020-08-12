@@ -29,6 +29,8 @@ function createWindow() {
     },
   });
 
+  globalShortcut.register('f12', () => win.toggleDevTools());
+
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL);
 

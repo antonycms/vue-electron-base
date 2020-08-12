@@ -1,5 +1,19 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <button @click="teste">Teste</button>
   </div>
 </template>
+
+<script>
+import callBackend from '@/frontend/utils/callBackend';
+
+export default {
+  methods: {
+    async teste() {
+      const a = await callBackend({ eventName: 'mensagem', data: 'Ola mundo' });
+
+      console.log(a);
+    },
+  },
+};
+</script>
