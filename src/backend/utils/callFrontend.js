@@ -1,6 +1,6 @@
 import { ipcMain } from 'electron';
 
-export default async function({ eventName, functionExec }) {
+export default async function({ eventName, functionExec, context }) {
   if (!eventName) {
     throw new Error('eventName is required');
   }
@@ -9,8 +9,10 @@ export default async function({ eventName, functionExec }) {
     throw new Error('functionExec is required');
   }
 
-  ipcMain.on(eventName, async (event, arg) => {
-    const response = await functionExec(arg);
+  const exec = functionExec.bind(context);
+
+  ipcMain.on(eventName, async function(event, arg) {
+    const response = await exec(arg);
 
     event.reply(eventName, response);
   });

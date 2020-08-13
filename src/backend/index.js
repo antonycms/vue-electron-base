@@ -1,5 +1,5 @@
 //import './database';
-import callFront from '@/backend/utils/callFront';
+import callFront from '@/backend/utils/callFrontend';
 
 async function funcExample(dataReceived) {
   const response = await new Promise(function(resolve, _) {

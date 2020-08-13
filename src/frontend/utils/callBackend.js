@@ -1,6 +1,6 @@
 const electron = window.require('electron');
 
-const debounceEvent = (fn, wait = 1000, time) => (...args) =>
+const debounceEvent = (fn, wait = 1000) => (...args) =>
   clearTimeout(window.timeEvent, (window.timeEvent = setTimeout(() => fn(...args), wait)));
 
 export default async function({ eventName, data }) {
@@ -9,7 +9,7 @@ export default async function({ eventName, data }) {
       const handleEvent = debounceEvent(() => {
         electron.ipcRenderer.send(eventName, data);
 
-        electron.ipcRenderer.on(eventName, (_, resp) => {
+        electron.ipcRenderer.once(eventName, (_, resp) => {
           resolve(resp);
         });
       }, 200);
